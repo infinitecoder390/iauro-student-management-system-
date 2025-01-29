@@ -2,6 +2,7 @@ import { useState } from "react";
 import StudentForm from "./UI/Form";
 import StudentTable from "./UI/Table";
 import { Button } from "@mui/material";
+import toast from "react-hot-toast";
 const StudentManagement = () => {
   const [students, setStudents] = useState([]);
   const [editIndex, setEditIndex] = useState(-1);
@@ -12,8 +13,10 @@ const StudentManagement = () => {
       updatedStudents[editIndex] = newStudent;
       setStudents(updatedStudents);
       setEditIndex(-1);
+      toast.success("Student details updated successfully.");
     } else {
       setStudents([...students, newStudent]);
+      toast.success("New student added successfully.");
     }
     setIsAddOpen(false);
   };
@@ -26,6 +29,7 @@ const StudentManagement = () => {
   const handleDelete = (index) => {
     const updatedStudents = students.filter((_, i) => i !== index);
     setStudents(updatedStudents);
+    toast.success("Student details deleted successfully.");
   };
 
   const handleCancelEdit = () => {

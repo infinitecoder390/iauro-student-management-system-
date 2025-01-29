@@ -13,7 +13,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 const StudentTable = ({ students, onEdit, onDelete }) => {
   return (
-    <TableContainer component={Paper} sx={{ mt: 4 }} >
+    <TableContainer component={Paper} sx={{ mt: 4 }}>
       <Table>
         <TableHead>
           <TableRow>
